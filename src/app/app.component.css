@@ -31,6 +31,10 @@ td.mat-cell {
      font-weight: 800;
  }
 
+ .rounded{
+     border-radius:12px !important;
+ }
+
  .grid1{
      background-color: #C3CE32;
      border: 2px solid #848b1c
