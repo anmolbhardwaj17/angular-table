@@ -57,7 +57,7 @@
     </div>
   </div>
   <div class="table-outer pt-5">
-    <div class="d-flex justify-content-between tableHeader">
+    <div class="tableHeader">
       <h1 class="bold">Purchase History</h1>
     <div class="pb-3">
       <input id="textFilter" class="inputFilter" matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
@@ -68,7 +68,7 @@
       
 
     <div class="table-responsive">
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort (matSortChange)="announceSortChange($event)" >
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-responsive" matSort (matSortChange)="announceSortChange($event)" >
     
         <!-- Position Column -->
         <ng-container matColumnDef="date">
@@ -144,11 +144,12 @@
           <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
         </tr>
       </table>
-      <mat-paginator class="pagination" [pageSizeOptions]="[5, 10, 20]"
-                   showFirstLastButtons 
-                   aria-label="Select page of periodic elements">
-    </mat-paginator>
+     
     </div>
+    <mat-paginator class="pagination" [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons 
+    aria-label="Select page of periodic elements">
+</mat-paginator>
     
   </div>
 </div>

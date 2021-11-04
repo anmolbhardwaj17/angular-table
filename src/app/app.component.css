@@ -52,12 +52,25 @@ td.mat-cell {
     color:white;
 }
 
+.tableHeader{
+    display: flex;
+    justify-content: space-between;
+}
+
 .pagination{
     border: 2px solid #eeeeee;
+
 }
 
 .table-responsive {
     overflow-x: scroll;
     width: 100;
     overflow: auto;
+  }
+
+  @media(max-width:455px){
+    .tableHeader{
+        display: block;
+
+    }
   }
