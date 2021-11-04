@@ -1,0 +1,154 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container d-flex justify-content-between">
+    <span class="navbar-brand mb-0 h1">Assignment</span>
+    <span class="text-light">Website is responsive :)</span>
+  </div>
+</nav>
+<div class="container">
+  <div class="upper">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-3 p-2 ">
+        <div class="rounded p-2 boxed grid1">
+          <div>
+            <label>Name:  </label><h2> Jon Revell</h2>
+          </div>
+          <div>
+            <label>Currency Available to Redeem:  </label><h2> $150.00</h2>
+          </div>
+          <div>
+            <label>PetPeeps Points this year:  </label><h2> 2318</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 p-2 ">
+        <div class="rounded p-2 boxed grid2">
+          <div class="pt-3">
+            <label>First name:  </label><h2> $4328.91</h2>
+          </div>
+          <div class="pt-3">
+            <label>First name:  </label><h2> $4328.91</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 p-2 ">
+        <div class="rounded p-2 boxed grid3">
+          <div class="row pt-5 mt-4">
+            <div class="col-6 text-center ">
+              <h1 class="bold">178</h1>
+              <p>Sale QTY</p>
+            </div>
+            <div class="col-6 text-center">
+              <h1 class="bold">4</h1>
+              <p>Return QTY</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 p-2">
+        <div class="rounded p-2 boxed grid4">
+          <div class="pt-3">
+            <label>AVG $ Per Receipt:  </label><h2> $4328.91</h2>
+          </div>
+          <div class="pt-3">
+            <label>Net Sales T$:  </label><h2> $4328.91</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table-outer pt-5">
+    <div class="d-flex justify-content-between tableHeader">
+      <h1 class="bold">Purchase History</h1>
+    <div class="pb-3">
+      <input id="textFilter" class="inputFilter" matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
+      <label for="textFilter" class="px-2"><i class="bi bi-search p-2"></i></label>
+    </div>
+    </div>
+    
+      
+
+    <div class="table-responsive">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort (matSortChange)="announceSortChange($event)" >
+    
+        <!-- Position Column -->
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="rcptType">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> Rcpt Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.rcptType}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="rcpt">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> Rcpt </th>
+          <td mat-cell *matCellDef="let element"> {{element.rcpt}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="items">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> Items </th>
+          <td mat-cell *matCellDef="let element"> {{element.items}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="totalQty">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> Total QTY </th>
+          <td mat-cell *matCellDef="let element"> {{element.totalQty}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="receptSubtotal">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> Recept Sub Total </th>
+          <td mat-cell *matCellDef="let element"> {{element.receptSubtotal}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="receptDisc">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> Recept Discount</th>
+          <td mat-cell *matCellDef="let element"> {{element.receptDisc}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="receptAmt">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> Recept Amt </th>
+          <td mat-cell *matCellDef="let element"> {{element.receptAmt}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="ptsPeeps">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> Pts Peeps </th>
+          <td mat-cell *matCellDef="let element"> {{element.ptsPeeps}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="stores">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> Stores </th>
+          <td mat-cell *matCellDef="let element"> {{element.stores}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="tenderType">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> Tender Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.tenderType}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="cashier">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> Cashier </th>
+          <td mat-cell *matCellDef="let element"> {{element.cashier}} </td>
+        </ng-container>
+  
+        
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+      </table>
+      <mat-paginator class="pagination" [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons 
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+    </div>
+    
+  </div>
+</div>
