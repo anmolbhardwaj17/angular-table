@@ -68,6 +68,13 @@ td.mat-cell {
     overflow: auto;
   }
 
+  .verticalBorderLeft{
+      border-left: 1px solid #69a5a4;
+  }
+  .verticalBorderRight{
+    border-right: 1px solid #69a5a4;
+}
+
   @media(max-width:455px){
     .tableHeader{
         display: block;
