@@ -4,29 +4,29 @@
     <span class="text-light">Website is responsive :)</span>
   </div>
 </nav>
-<div class="container">
+<div class="container" >
   <div class="upper">
     <div class="row">
       <div class="col-12 col-sm-6 col-md-3 p-2 ">
         <div class="rounded p-2 boxed grid1">
           <div>
-            <label>Name:  </label><h2> Jon Revell</h2>
+            <label>Name:  </label><h2> {{name}}</h2>
           </div>
           <div>
-            <label>Currency Available to Redeem:  </label><h2> $150.00</h2>
+            <label>Currency Available to Redeem:  </label><h2> ${{catr}}</h2>
           </div>
           <div>
-            <label>PetPeeps Points this year:  </label><h2> 2318</h2>
+            <label>PetPeeps Points this year:  </label><h2> {{pppty}}</h2>
           </div>
         </div>
       </div>
       <div class="col-12 col-sm-6 col-md-3 p-2 ">
         <div class="rounded p-2 boxed grid2">
           <div class="pt-3">
-            <label>First name:  </label><h2> $4328.91</h2>
+            <label>Sale Price:  </label><h2> ${{salePrice}}</h2>
           </div>
           <div class="pt-3">
-            <label>First name:  </label><h2> $4328.91</h2>
+            <label>Return Price:  </label><h2> ${{returnPrice}}</h2>
           </div>
         </div>
       </div>
@@ -34,11 +34,11 @@
         <div class="rounded p-2 boxed grid3">
           <div class="row pt-5 mt-4">
             <div class="col-6 text-center ">
-              <h1 class="bold">178</h1>
+              <h1 class="bold">{{saleQTY}}</h1>
               <p>Sale QTY</p>
             </div>
             <div class="col-6 text-center">
-              <h1 class="bold">4</h1>
+              <h1 class="bold">{{returnQTY}}</h1>
               <p>Return QTY</p>
             </div>
           </div>
@@ -47,10 +47,10 @@
       <div class="col-12 col-sm-6 col-md-3 p-2">
         <div class="rounded p-2 boxed grid4">
           <div class="pt-3">
-            <label>AVG $ Per Receipt:  </label><h2> $4328.91</h2>
+            <label>AVG $ Per Receipt:  </label><h2> ${{avgpr}}</h2>
           </div>
           <div class="pt-3">
-            <label>Net Sales T$:  </label><h2> $4328.91</h2>
+            <label>Net Sales T$:  </label><h2> ${{nst}}</h2>
           </div>
         </div>
       </div>

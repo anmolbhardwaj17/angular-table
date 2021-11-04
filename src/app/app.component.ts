@@ -5,7 +5,34 @@ import {AfterViewInit, ViewChild} from '@angular/core';
 import {MatSort, Sort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 
+export interface UserData {  
+  name: String;  
+  catr:number,
+  pppty:number,
+  salePrice:number,
+  returnPrice:number,
+  saleQTY: number,
+  returnQTY: number,
+  avgpr: number,
+  nst:number
+}  
 
+const USER_DATA: UserData[] =[
+  {
+    name:"Jon Revell",
+    catr: 150.00,
+    pppty: 2318,
+    salePrice:4328.91,
+    returnPrice:9.41,
+    saleQTY: 178,
+    returnQTY: 4,
+    avgpr: 51.53,
+    nst:294.88,
+  }
+] 
+
+const info = USER_DATA[0];
+//console.log(info);
 export interface InternshipData {
   date: string;
   rcptType: string;
@@ -20,6 +47,7 @@ export interface InternshipData {
   tenderType: string;
   cashier: string;
 }
+
 
 const ELEMENT_DATA: InternshipData[] = [
   {date: "09/23/2021", rcptType: "Sale", rcpt: 148930, items: 3, totalQty: 20, receptSubtotal: 600, receptDisc: 30, receptAmt: 570,ptsPeeps:570, stores: 4, tenderType: "Credit", cashier:"JESSICPI"},
@@ -68,7 +96,18 @@ const ELEMENT_DATA: InternshipData[] = [
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'dashboard';
+  title = 'Angular-table';
+
+  
+  public name =  info.name;
+  public  catr: number = info.catr;
+  public  pppty: number = info.pppty;
+  public  salePrice: number =info.salePrice;
+  public  returnPrice: number =info.returnPrice;
+  public saleQTY: number =  info.saleQTY;
+  public  returnQTY: number =  info.returnQTY;
+  public  avgpr: number =  info.avgpr;
+  public  nst: number = info.nst;
 
   displayedColumns: string[] = ['date', 'rcptType', 'rcpt', 'items', 'totalQty', 'receptSubtotal', 'receptDisc', 'receptAmt', 'ptsPeeps', 'stores', 'tenderType', 'cashier'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
